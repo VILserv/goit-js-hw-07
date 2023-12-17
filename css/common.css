@@ -12,6 +12,23 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 2px 5px 5px rgb(0, 0, 0, 0.5);
+}
 
 input {
   padding: 8px;
@@ -22,36 +39,39 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+#categories {
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 440px;
+}
 .item {
+  padding: 16px;
+  width: 392px;
   border-radius: 8px;
-  background: #F6F6FE;
+  background: #f4f4ff;
 }
-
-.item h2 {
-  color: #2E2F42;
-  font-family: Montserrat;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.33;
-  letter-spacing: 0.96px;
+.item:not(:last-child) {
+  margin-bottom: 24px;
 }
-
-.item ul > li{
-  list-style: none;
-  color: #2E2F42;
-  margin-bottom: 8px;
-  padding-left: 16px;
-  max-width: 360px;
-
+.item > ul > li {
+  padding: 8px 16px;
+  width: 360px;
   border-radius: 4px;
-  border: 1px solid #808080;
-
+  border: 1px solid #9b9898;
+  color: #25274d;
   font-family: Montserrat;
-  font-size: 16px;
-  line-height: 1.5; 
-  letter-spacing: 0.64px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.04em;
 }
-
+.item > ul > li:not(:last-child) {
+  margin-bottom: 8px;
+}
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -59,20 +79,158 @@ button {
   column-gap: 24px;
   row-gap: 48px;
   list-style-type: none;
-  padding: 100px 156px;
-  margin: 0 auto;
+  padding: 100px 160px;
   max-width: 1440px;
+  margin: 0 auto;
 }
 
 .gallery-item {
-  width: calc((100% - 48px) / 3); 
-  box-sizing: border-box; 
+  width: calc((100% - 48px) / 3);
+  box-sizing: border-box;
+}
+#name-input {
+  width: 360px;
+  height: 40px;
+  padding-left: 16px;
+  margin-bottom: 36px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  color: #2c2f61;
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+#name-input:hover {
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+#name-output {
+  color: #1b1922;
 }
 
-.img {
-  display: block; 
-  object-fit: cover;
-  box-shadow: 2px 5px 5px rgb(0, 0, 0, 0.5); 
-  max-width: 100%; 
-  height: 300px; 
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 8px;
+  color: #393b55;
+  font-family: Montserrat;
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+.login-form label input {
+  width: 360px;
+  height: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 3px;
+  border: 1px solid #807d7d;
+}
+
+.login-form button {
+  width: 86px;
+  height: 40px;
+  padding: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  outline: transparent;
+  border-color: transparent;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.64px;
+}
+
+.login-form button:hover,
+.login-form button:focus {
+  background-color: #5377f8;
+}
+
+.widget {
+  margin: 0 auto;
+  padding: 80px 0;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #2c424e;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5; /* 150% */
+  letter-spacing: 0.04em;
+}
+
+.change-color {
+  margin: 0 auto;
+  padding: 8px 16px;
+  width: 160px;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  outline: none;
+  border-radius: 6px;
+  background: #67cab1;
+  border: none;
+}
+.change-color:hover {
+  background-color: #11363d;
+}
+
+#controls button {
+  width: 120px;
+  padding: 8px 16px;
+  margin-left: 16px;
+
+  border-radius: 8px;
+  outline: transparent;
+  border-color: transparent;
+}
+
+button[data-create] {
+  background: #45f335;
+}
+
+button[data-destroy] {
+  background-color: #f02b2b;
+}
+
+#controls button[data-create]:hover,
+#controls button[data-create]:focus {
+  background-color: #217525;
+}
+
+#controls button[data-destroy]:hover,
+#controls button[data-destroy]:focus {
+  background-color: #8a0c0c;
+}
+
+#boxes {
+  display: flex;
+  overflow: auto;
+  padding: 32px;
+  margin-top: 16px;
+  flex-direction: row;
+  gap: 10px;
+  background-color: #f6f6fe;
+  border-radius: 8px;
+}
+
+.boxes-item {
+  flex-shrink: 0;
 }

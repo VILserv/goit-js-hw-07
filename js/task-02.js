@@ -30,7 +30,7 @@ const images = [
   },
 ];
 
-const listOfPicture = document.querySelector('.gallery');
+const galleryList = document.querySelector('.gallery');
 
 const elements = images.map(option => {
   const itemEl = document.createElement('li');
@@ -38,11 +38,12 @@ const elements = images.map(option => {
   const imageEl = document.createElement('img');
   imageEl.src = option.url;
   imageEl.alt = option.alt;
-  imageEl.width = 360;
+  imageEl.width = 320;
 
   itemEl.appendChild(imageEl);
 
   return itemEl;
 });
 
-listOfPicture.append(...elements);
+galleryList.append(...elements);
+

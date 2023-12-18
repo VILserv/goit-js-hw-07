@@ -38,7 +38,8 @@ const elements = images.map(option => {
   const imageEl = document.createElement('img');
   imageEl.src = option.url;
   imageEl.alt = option.alt;
-  imageEl.width = 320;
+  imageEl.width = 360;
+  imageEl.height = 300;
 
   itemEl.appendChild(imageEl);
 
